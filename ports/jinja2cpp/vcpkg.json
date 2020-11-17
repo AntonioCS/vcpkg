@@ -1,0 +1,19 @@
+{
+	"name": "jinja2cpp",
+	"version-string": "1.1.0 ",
+	"homepage": "https://github.com/jinja2cpp/Jinja2Cpp",
+	"description": "C++ implementation of the Jinja2 Python template engine. This library brings support of powerful Jinja2 template features into the C++ world, reports dynamic HTML pages and source code generation.",
+	"dependencies": [		
+		"expected-lite",
+		"variant-lite",
+		"optional-lite",
+		"string-view-lite",
+		"fmt",		
+		"boost-system",
+		"boost-filesystem",
+		"boost-variant",
+		"boost-unordered",
+		"boost-algorithm",
+		"rapidjson"
+	]
+}
