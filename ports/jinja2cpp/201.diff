@@ -1,0 +1,29 @@
+diff --git a/src/serialize_filters.cpp b/src/serialize_filters.cpp
+index ad83f08..6d709f5 100644
+--- a/src/serialize_filters.cpp
++++ b/src/serialize_filters.cpp
+@@ -214,7 +214,7 @@ struct FormatArgumentConverter : visitors::BaseVisitor<FormatArgument>
+     template<typename T>
+     result_t make_result(const T& t) const
+     {
+-        return fmt::internal::make_arg<FormatContext>(m_decorator(t));
++        return fmt::detail::make_arg<FormatContext>(m_decorator(t));
+     }
+ 
+     const RenderContext* m_context;
+@@ -222,7 +222,7 @@ struct FormatArgumentConverter : visitors::BaseVisitor<FormatArgument>
+ };
+ 
+ template<typename T>
+-using NamedArgument = fmt::internal::named_arg<T, char>;
++using NamedArgument = fmt::detail::named_arg<T, char>;
+ 
+ using ValueHandle =
+   nonstd::variant<bool, std::string, int64_t, double, NamedArgument<bool>, NamedArgument<std::string>, NamedArgument<int64_t>, NamedArgument<double>>;
+diff --git a/thirdparty/fmtlib b/thirdparty/fmtlib
+index f94b736..f19b1a5 160000
+--- a/thirdparty/fmtlib
++++ b/thirdparty/fmtlib
+@@ -1 +1 @@
+-Subproject commit f94b7364b9409f05207c3af3fa4666730e11a854
++Subproject commit f19b1a521ee8b606dedcadfda69fd10ddf882753
